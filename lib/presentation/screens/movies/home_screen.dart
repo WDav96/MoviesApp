@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:movies_app/config/constants/environtment.dart';
 
 class HomeScreen extends StatelessWidget {
   static const name = "home_screen";
@@ -9,10 +9,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text(dotenv.env["THE_MOVIEDB_KEY"] ?? "There is not API key..."),
-      ),
-    );
+    return Scaffold(body: Center(child: Text(Environtment.theMovieDBKey)));
   }
 }
